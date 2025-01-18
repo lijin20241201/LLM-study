@@ -208,7 +208,7 @@ def find_category_and_product(user_input,products_and_category):
     {'role':'system', 'content': system_message},    
     {'role':'user', 'content': f"{delimiter}{user_input}{delimiter}"},  
     ] 
-    return get_completion_from_messages(messages)
+    return get_completion_from_messages(messages) # 返回模型回复
 
 # 相比上一个函数，可获取的商品直接在 template 中限定
 def find_category_and_product_only(user_input,products_and_category):
@@ -283,7 +283,7 @@ def get_products_from_query(user_msg):
     """
     代码来自于第五节课
     """
-    products_and_category = get_products_and_category()
+    products_and_category = get_products_and_category() # 获取所有类别和产品的字符串
     delimiter = "####"
     system_message = f"""
     您将获得客户服务查询。
@@ -306,7 +306,7 @@ def get_products_from_query(user_msg):
 
     """
     
-    messages =  [  
+    messages =  [  # 消息列表
     {'role':'system', 'content': system_message},    
     {'role':'user', 'content': f"{delimiter}{user_msg}{delimiter}"},  
     ] 
